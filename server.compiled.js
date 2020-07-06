@@ -16,13 +16,13 @@ app.all('/api/getReviews', (req, res) => {
 app.all('/products', (req, res) => {
   proxy.web(req, res, { target: 'http://newcarousel-env.eba-irp2rurw.us-east-2.elasticbeanstalk.com/' });
 });
-app.all('/api/get/products', (req, res) => {
 
+app.all('/api/get/products', (req, res) => {
   proxy.web(req, res, { target: 'http://searchbarricardo2-dev.us-east-2.elasticbeanstalk.com/' });
 });
+
 app.all('/display', (req, res) => {
   proxy.web(req, res, { target: 'http://imagecomponent-env-1.eba-4mfwjdhg.us-east-2.elasticbeanstalk.com/' });
-  // res.status(200)
 });
 
 app.listen(PORT, () => {
