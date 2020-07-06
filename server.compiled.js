@@ -24,6 +24,9 @@ app.all('/api/get/products', (req, res) => {
 app.all('/display', (req, res) => {
   proxy.web(req, res, { target: 'http://imagecomponent-env-1.eba-4mfwjdhg.us-east-2.elasticbeanstalk.com/' });
 });
+app.all('/images/:id', (req, res) => {
+  proxy.web(req, res, { target: 'http://imagecomponent-env-1.eba-4mfwjdhg.us-east-2.elasticbeanstalk.com/' });
+});
 
 app.listen(PORT, () => {
   console.log(`server is CONNECTED on PORT:${PORT}`);
